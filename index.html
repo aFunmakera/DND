@@ -583,6 +583,11 @@
             
             // 获取用户选中的背景模板
             const selectedBg = charData.backgroundTemplates[charData.selectedBackgroundIndex];
+	    	const abilityMod = (score) => Math.floor((score - 10) / 2);
+	const formatMod = (score) => {
+        const mod = abilityMod(score);
+        return mod >= 0 ? `+${mod}` : `${mod}`;
+    };
 
             // 简单的属性分配逻辑
             let abilities = {
@@ -628,11 +633,6 @@
 
 // 2. 计算 3 级血量 (1级满值 + 后两级平均值 + 3倍体质修正)
 	const totalHP = die + (Math.floor(die / 2) + 1) * 2 + (cMod * 3);
-            const abilityMod = (score) => Math.floor((score - 10) / 2);
-            const formatMod = (score) => {
-                const mod = abilityMod(score);
-                return mod >= 0 ? `+${mod}` : `${mod}`;
-            };
 
             let equipment = '探险者套装，职业起始武器，普通旅行衣物，50gp';
             if (charData.isSquire) {
@@ -772,7 +772,6 @@ ${charData.isSquire ? '【隐藏信息：初始身份为Squire（侍从骑士）
 职业： ${ally.class} ${ally.level}级
 阵营： ${ally.alignment}
 背景： ${ally.background}
-技能熟练项： ${skillsText}
 
 --- 属性 ---
 力量： ${ally.str} (${abilityMod(ally.str)})
@@ -818,4 +817,5 @@ ${ally.desc}
         };
     </script>
 </body>
+
 </html>
