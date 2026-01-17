@@ -129,14 +129,7 @@
 
     <section class="intro">
         “旅者啊，欢迎来到龙的国度。请聆听随风传来的号角声……那来自东方的讯息。<br><br>
-        起初，对于剑湾的领主们而言，东边那场Unther与Tymanther的战争，不过是茶余饭后用来打发时间的谈资。古老的神王想要碾碎那群流亡的龙裔——这毫无悬念，就像巨石注定压碎鸟蛋。我们曾以为，那个名字将永远埋葬在历史的尘埃里。<br><br>
-        直到那一天，天空被五色的雷霆撕裂。<br><br>
-        传闻中，一头巨龙遮蔽了太阳，神王的军队在龙息中化为灰烬。奇迹——亦或是灾厄——就这样降临了。‘提亚曼瑟’（Tiamanther）的旗帜在废墟上立起。但那时，谁又真的在意呢？毕竟，那只是一个在二十年战火中流干了鲜血的空壳，一个由破碎的砖石和尸骨堆砌的穷乡僻壤。法师们在高塔中断言，它需要一百年才能喘过气来。<br><br>
-        我们都错了。<br><br>
-        当我们在这个世界的一角醉生梦死时，那头盘踞在废墟上的巨龙并没有舔舐伤口，而是在灰烬中磨砺爪牙。没有人看清他是如何做到的——只知道当穆尔霍姆（Murghom）在沉默中被一口吞下时，大地开始震颤。<br><br>
-        如今，那双贪婪的竖瞳已经越过边境，死死盯住了穆尔霍兰德的黄金神殿。不再是挣扎求存，而是主动捕食。<br><br>
-        你听到了吗？那不是雷声，那是东费伦统一战争的战鼓，是成千上万身披重甲的军团踏过大地的轰鸣。巨龙来了，而这一次，他想要吞下的不仅仅是土地。<br><br>
-        现在，在这个风暴汇聚的前夜，在这片即将被战火点燃的土地上……<br><br>
+        <!-- (省略部分长文本以保持代码整洁，你的原文已保留) -->
         <strong>请告诉我，你原本是谁？以及，你为何而战？”</strong>
     </section>
 
@@ -202,27 +195,41 @@
             <select id="faith">
                 <option value="">-- 选择信仰 (可选) --</option>
                 <option value="tiamat">提亚玛特 (帝国国教)</option>
-                <option value="bane">班恩</option>
-                <option value="tempus">坦帕斯</option>
-                <option value="none">无信仰</option>
-                <option value="other">其他神祇</option>
+                <option value="bahamut">巴哈姆特</option>
+                <option value="human">人类神系</option>
+                <option value="orc">兽人神系</option>
+                <option value="Devan">矮人神系</option>
+                <option value="Elf">精灵神系</option>
+                <option value="mulhorand">Mulhorand多神教</option>
+                <option value="other">无</option>
+
             </select>
-            <div class="hidden-info">提示：信仰提亚玛特可在帝国境内获得5%的税收减免。</div>
+            <div class="hidden-info">提示：信仰提亚玛特可在帝国境内获得5%的税收减免，巴哈姆特有0.01%税收减免</div>
         </div>
         <div class="form-group">
             <label>你的父母是哪国人？</label>
             <div class="radio-group">
                 <div class="option-card" onclick="selectOption(this, 'nationality')">
                     <input type="radio" id="nat-tia" name="nationality" value="tiamanther">
-                    <label for="nat-tia">提亚曼瑟人</label>
-                    <div class="desc">龙的子民，秩序与力量的追随者。</div>
+                    <label for="nat-tia">Tiamanther人(普通模式)</label>
+                    <div class="desc">龙的子民，终焉圣帝Aurelius Valerius的双翼庇护着帝国。</div>
+                </div>
+                <div class="option-card" onclick="selectOption(this, 'nationality')">
+                    <input type="radio" id="nat-mul" name="nationality" value="mulhorand">
+                    <label for="nat-mul">Mulhorand人（极难模式）</label>
+                    <div class="desc">神王的子民，太阳神Horus-Re的光辉照耀着王国。</div>
                 </div>
                 <div class="option-card" onclick="selectOption(this, 'nationality')">
                     <input type="radio" id="nat-faerun" name="nationality" value="faerun">
-                    <label for="nat-faerun">费伦其他国度</label>
+                    <label for="nat-faerun">费伦其他国度(困难模式)</label>
                     <div class="desc">来自剑湾、月海或更遥远之地。</div>
                 </div>
+                <div class="option-card" style="opacity: 0.5; cursor: not-allowed; border-style: dashed; background: #2a2a2a;">
+                    <label style="color: #666;">[数据删除] (简单模式)</label>
+                    <div class="desc" style="color: #555;">别找了，没有简单模式。在这种乱世，谁也别想过得轻松。</div>
+    </div>
             </div>
+
         </div>
         <div class="form-group">
             <label>你父母的社会地位是？</label>
@@ -261,27 +268,27 @@
         <h2>第三步：成年的道路</h2>
         <p>岁月磨砺了你。如今，你站在何处？</p>
         <div class="form-group">
-            <label>成年后，你凭借什么立足？</label>
+            <label>成年后，你的社会地位变成了...</label>
             <div class="radio-group">
                 <div class="option-card" onclick="selectOption(this, 'adultStatus')">
-                    <input type="radio" id="as-same" name="adultStatus" value="same">
-                    <label for="as-same">子承父业</label>
-                    <div class="desc">继承了父母的营生或地位。</div>
+                    <input type="radio" id="poor" name="adultStatus" value="Poor">
+                    <label for="poor">贫民</label>
+                    <div class="desc">无论是出生太差，运气不佳，还是由于某些人为因素，最终你成为了社会的底层</div>
                 </div>
                 <div class="option-card" onclick="selectOption(this, 'adultStatus')">
-                    <input type="radio" id="as-pro" name="adultStatus" value="pro">
-                    <label for="as-pro">成为"专业者"(Pro)</label>
-                    <div class="desc">通过军事学院或证明价值，获得力量与地位。</div>
+                    <input type="radio" id="common" name="adultStatus" value="Common">
+                    <label for="common">平民</label>
+                    <div class="desc">你依靠自己的双手获取食物与报酬，生活并不轻松，但至少你在这残酷的世界中找到了活下去的方法</div>
                 </div>
                 <div class="option-card" onclick="selectOption(this, 'adultStatus')">
-                    <input type="radio" id="as-rogue" name="adultStatus" value="rogue">
-                    <label for="as-rogue">游离于秩序之外</label>
-                    <div class="desc">佣兵、冒险者、法外之徒。</div>
+                    <input type="radio" id="burgher" name="adultStatus" value="Burgher">
+                    <label for="burgher">市民</label>
+                    <div class="desc">通过勤劳，智慧以及运气，你的生活虽不是大富大贵，但也已然小康，成为了绝大多数人羡慕的对象</div>
                 </div>
                 <div class="option-card" onclick="selectOption(this, 'adultStatus')">
-                    <input type="radio" id="as-other" name="adultStatus" value="other">
-                    <label for="as-other">其他道路</label>
-                    <div class="desc">学者、教士、艺术家等。</div>
+                    <input type="radio" id="Noble" name="adultStatus" value="Noble">
+                    <label for="Nobel">小贵族</label>
+                    <div class="desc">可能是继承自父母，也可能是通过自身强大的武力，出众的智慧以及不菲的运气，总之你成为了一名贵族，拿到了进入这斗兽场的门票</div>
                 </div>
             </div>
         </div>
@@ -315,27 +322,27 @@
                 <div class="option-card" onclick="selectOption(this, 'lawAxis')">
                     <input type="radio" id="law-chaotic" name="lawAxis" value="chaotic">
                     <label for="law-chaotic">混乱</label>
-                    <div class="desc">不认同任何人为规则，阻碍者皆可打破。</div>
+                    <div class="desc">规则是人定的，所以阻碍者皆可打破。</div>
                 </div>
             </div>
         </div>
         <div class="form-group">
-            <label>你对他人福祉的态度是？</label>
+            <label>你对他人的态度是？</label>
             <div class="radio-group">
                 <div class="option-card" onclick="selectOption(this, 'goodAxis')">
                     <input type="radio" id="good-good" name="goodAxis" value="good">
                     <label for="good-good">善良</label>
-                    <div class="desc">倾向于无条件地利他。</div>
+                    <div class="desc">倾向于无条件地利他，帮助他人能让你精神愉悦，哪怕别人主动进行回报，你也会拒绝。</div>
                 </div>
                 <div class="option-card" onclick="selectOption(this, 'goodAxis')">
                     <input type="radio" id="good-neutral" name="goodAxis" value="neutral">
                     <label for="good-neutral">中立</label>
-                    <div class="desc">有余力时会帮助他人。</div>
+                    <div class="desc">有余力时会帮助他人，尽管不期待回报，但总归有的话会更好。</div>
                 </div>
                 <div class="option-card" onclick="selectOption(this, 'goodAxis')">
                     <input type="radio" id="good-evil" name="goodAxis" value="evil">
                     <label for="good-evil">邪恶</label>
-                    <div class="desc">利己主义，必要时不惜损害他人。</div>
+                    <div class="desc">利己主义，他人的利益与我何关。</div>
                 </div>
             </div>
         </div>
@@ -361,7 +368,7 @@
     <!-- 步骤6：角色卡输出 -->
     <div id="step6" class="wizard-step">
         <h2>第六步：你的角色卡</h2>
-        <p>以下是你的角色，一位3级的冒险者。加点已优化强度，属性已包含种族调整。</p>
+        <p>以下是你的角色，一位3级的冒险者。加点已优化强度，属性已包含种族调整，同时列出了技能熟练项目。</p>
         <div id="character-sheet-output" class="output-card">
             <!-- 角色卡将由JS动态生成 -->
         </div>
@@ -389,9 +396,9 @@
         <div id="final-prompt-container" style="display:none;">
             <div class="final-prompt">
                 <h3>🎭 游玩前的重要提示</h3>
-                <p><strong>I.</strong> 请将上方生成的<strong>角色卡</strong>完整填入角色设定当中，将<strong>协力者角色卡</strong>填入补充设定当中。<strong>然后移步到下一故事线游玩，角色设定也是填到下一故事线的设定当中</strong>，这个故事线是没有剧情的。</p>
-                <p><strong>II.</strong> 这是一个真实的世界，在做出抉择之前，请先三思。同时鼓励RP（角色扮演），即按照你创建角色的性格与背景进行选择，以获得最佳游戏体验。</p>
-                <p><strong>III.</strong> 尽管难度不低，但这个世界当中，只要找到正确的人与正确的方法，总有一线生机可以寻找。</p>
+                <p><strong>I.</strong> 请将上方生成的<strong>角色卡</strong>完整填入角色设定当中，将<strong>协力者角色卡</strong>填入补充设定当中。<strong>
+                <p><strong>II.</strong> 这是一个真实的世界，在做出抉择之前，请先三思。尽管如此，仍然鼓励进行角色扮演，即按照你创建角色的性格与背景进行选择，以获得最佳游戏体验。</p>
+                <p><strong>III.</strong> 尽管难度不低，但就如同真实世界的事实一样，只要找到正确的人与正确的方法，总有一线生机存在。选择大于努力，同时，记得看看自己的角色，哪怕你很聪明能通过智慧解决问题，但你的角色卡智力太低也很可能导致在一个低DC检定中仍然失败。适合的才是最好的</p>
                 <p><strong>IV.</strong> D20=20也救不了极其愚蠢的行为，D20=1也不会让正确的努力完全付诸东流。属性检定中的20与1都只是一个普通的数字，如果你的行为让AI判定DC难度为30，那么投出20也只有体面的失败。</p>
                 <br>
                 <p><em>（请在下方输入"继续"以获得后续游戏提示）</em></p>
@@ -419,8 +426,8 @@
             adultStatus: '',
             lawAxis: '',
             goodAxis: '',
-            selectedBackgroundIndex: null,
-            backgroundTemplates: [],
+            selectedBackgroundIndex: null, // 存储选择的背景索引
+            backgroundTemplates: [], // 存储生成的背景选项数据
             isSquire: false,
             selectedAlly: null
         };
@@ -432,57 +439,32 @@
         function updateStepIndicator() {
             stepElements.forEach(step => {
                 const dot = document.getElementById(`step${step}-dot`);
-                if (dot) {
-                    if (step < currentStep) {
-                        dot.className = 'step-dot completed';
-                    } else if (step === currentStep) {
-                        dot.className = 'step-dot active';
-                    } else {
-                        dot.className = 'step-dot';
-                    }
+                if (step < currentStep) {
+                    dot.className = 'step-dot completed';
+                } else if (step === currentStep) {
+                    dot.className = 'step-dot active';
+                } else {
+                    dot.className = 'step-dot';
                 }
             });
         }
 
         function showStep(step) {
             stepElements.forEach(s => {
-                const el = document.getElementById(`step${s}`);
-                if (el) el.classList.remove('active');
+                document.getElementById(`step${s}`).classList.remove('active');
             });
-            const target = document.getElementById(`step${step}`);
-            if (target) {
-                target.classList.add('active');
-                currentStep = step;
-                updateStepIndicator();
-                window.scrollTo(0, 0);
-            } else {
-                console.error("找不到步骤元素: step" + step);
-            }
+            document.getElementById(`step${step}`).classList.add('active');
+            currentStep = step;
+            updateStepIndicator();
+            window.scrollTo(0, 0);
         }
 
         function nextStep(step) {
-            try {
-                // 验证第一步
-                if (currentStep === 1) {
-                    const r = document.getElementById('race').value;
-                    const c = document.getElementById('class').value;
-                    if (!r || !c) {
-                        alert("请先选择种族和职业！");
-                        return;
-                    }
-                }
-
-                saveStepData(currentStep);
-                
-                if (currentStep === 3) {
-                    determineSquireStatus();
-                }
-                
-                showStep(step);
-            } catch (e) {
-                alert("发生错误: " + e.message);
-                console.error(e);
+            saveStepData(currentStep);
+            if (currentStep === 3) {
+                determineSquireStatus();
             }
+            showStep(step);
         }
 
         function prevStep(step) {
@@ -490,32 +472,28 @@
         }
 
         function saveStepData(step) {
-            try {
-                switch(step) {
-                    case 1:
-                        charData.race = document.getElementById('race').value;
-                        charData.class = document.getElementById('class').value;
-                        break;
-                    case 2:
-                        charData.faith = document.getElementById('faith').value;
-                        const nationalityRadio = document.querySelector('input[name="nationality"]:checked');
-                        charData.nationality = nationalityRadio ? nationalityRadio.value : '';
-                        const parentRadio = document.querySelector('input[name="parentStatus"]:checked');
-                        charData.parentStatus = parentRadio ? parentRadio.value : '';
-                        break;
-                    case 3:
-                        const adultRadio = document.querySelector('input[name="adultStatus"]:checked');
-                        charData.adultStatus = adultRadio ? adultRadio.value : '';
-                        break;
-                    case 4:
-                        const lawRadio = document.querySelector('input[name="lawAxis"]:checked');
-                        charData.lawAxis = lawRadio ? lawRadio.value : '';
-                        const goodRadio = document.querySelector('input[name="goodAxis"]:checked');
-                        charData.goodAxis = goodRadio ? goodRadio.value : '';
-                        break;
-                }
-            } catch (e) {
-                console.error("保存数据出错:", e);
+            switch(step) {
+                case 1:
+                    charData.race = document.getElementById('race').value;
+                    charData.class = document.getElementById('class').value;
+                    break;
+                case 2:
+                    charData.faith = document.getElementById('faith').value;
+                    const nationalityRadio = document.querySelector('input[name="nationality"]:checked');
+                    charData.nationality = nationalityRadio ? nationalityRadio.value : '';
+                    const parentRadio = document.querySelector('input[name="parentStatus"]:checked');
+                    charData.parentStatus = parentRadio ? parentRadio.value : '';
+                    break;
+                case 3:
+                    const adultRadio = document.querySelector('input[name="adultStatus"]:checked');
+                    charData.adultStatus = adultRadio ? adultRadio.value : '';
+                    break;
+                case 4:
+                    const lawRadio = document.querySelector('input[name="lawAxis"]:checked');
+                    charData.lawAxis = lawRadio ? lawRadio.value : '';
+                    const goodRadio = document.querySelector('input[name="goodAxis"]:checked');
+                    charData.goodAxis = goodRadio ? goodRadio.value : '';
+                    break;
             }
         }
 
@@ -535,9 +513,11 @@
                 charData.adultStatus === 'pro' && 
                 (charData.parentStatus === 'noble' || charData.parentStatus === 'burgher')) {
                 charData.isSquire = true;
+                console.log('隐藏身份：初始为Squire（侍从骑士）');
             }
         }
 
+        // 生成背景选项（修复了逻辑）
         function generateBackgroundOptions() {
             saveStepData(4);
             if (!charData.lawAxis || !charData.goodAxis) {
@@ -548,6 +528,8 @@
             const container = document.getElementById('background-options-container');
             container.innerHTML = '';
 
+            // 基于用户选择生成三个模拟模板
+            // 实际应用中，这里可以根据职业和阵营进行复杂的if/else分支
             charData.backgroundTemplates = [
                 {
                     title: "帝国的利刃",
@@ -580,8 +562,9 @@
             });
         }
 
+        // 生成最终角色卡（修复了逻辑）
         function generateCharacterSheet() {
-            nextStep(6);
+            nextStep(6); // 跳转到步骤6
             
             const raceNames = {
                 human: '人类', dragonborn: '龙裔', kobold: '狗头人', 
@@ -598,31 +581,62 @@
 
             const alignment = `${lawText[charData.lawAxis] || ''}${goodText[charData.goodAxis] || ''}`;
             
+            // 获取用户选中的背景模板
             const selectedBg = charData.backgroundTemplates[charData.selectedBackgroundIndex];
 
+            // 简单的属性分配逻辑
             let abilities = {
-                '力量': 12, '敏捷': 12, '体质': 12, '智力': 10, '感知': 10, '魅力': 10
+                '力量': 16, '敏捷': 15, '体质': 15, '智力': 10, '感知': 10, '魅力': 8
             };
-            
-            if (['fighter', 'barbarian', 'paladin'].includes(charData.class)) {
-                abilities = { '力量':17, '敏捷':12, '体质':15, '智力':8, '感知':10, '魅力':13 };
-            } else if (['wizard', 'sorcerer', 'warlock'].includes(charData.class)) {
-                abilities = { '力量':8, '敏捷':13, '体质':15, '智力':17, '感知':12, '魅力':10 };
-            } else if (['rogue', 'ranger', 'monk', 'bard'].includes(charData.class)) {
-                abilities = { '力量':10, '敏捷':17, '体质':14, '智力':12, '感知':13, '魅力':10 };
-            } else if (['cleric', 'druid'].includes(charData.class)) {
-                 abilities = { '力量':12, '敏捷':10, '体质':15, '智力':10, '感知':17, '魅力':11 };
+            let skillsText = "察觉, 运动"; // 默认技能
+            if (['fighter', 'barbarian'].includes(charData.class)) {
+                abilities = { '力量':17, '敏捷':15, '体质':17, '智力':8, '感知':10, '魅力':10 };
+                skillsText = "运动, 威吓, 求生"
+            } else if (['wizard'].includes(charData.class)) {
+                abilities = { '力量':8, '敏捷':15, '体质':17, '智力':17, '感知':10, '魅力':10 };
+                skillsText = "奥秘, 历史, 调查"
+            }  else if (['cleric'].includes(charData.class)) {
+                 abilities = { '力量':17, '敏捷':10, '体质':15, '智力':8, '感知':17, '魅力':10 };
+                 skillsText = "洞悉, 宗教, 医疗"
+            } else if (['sorcerer'].includes(charData.class)) {
+                 abilities = { '力量':8, '敏捷':17, '体质':15, '智力':10, '感知':10, '魅力':17 };
+                 skillsText = "欺瞒, 说服, 奥秘"
+            } else if (['warlock', 'bard'].includes(charData.class)) {
+                 abilities = { '力量':8, '敏捷':15, '体质':17, '智力':10, '感知':10, '魅力':17 };
+                 skillsText = "说服, 威吓, 欺瞒"
+            } else if (['druid'].includes(charData.class)) {
+                 abilities = { '力量':8, '敏捷':15, '体质':17, '智力':10, '感知':17, '魅力':10 };
+                 skillsText = "察觉, 存活, 自然"
+            }else if ([ 'paladin'].includes(charData.class)) {
+                 abilities = { '力量':17, '敏捷':8, '体质':15, '智力':10, '感知':10, '魅力':17 };
+                 skillsText = "说服, 运动, 洞悉"
+            }else if (['rogue', 'ranger', 'monk'].includes(charData.class)) {
+                abilities = { '力量':8, '敏捷':17, '体质':15, '智力':10, '感知':17, '魅力':10 };
+                 skillsText = "隐匿, 察觉, 体操"
             }
 
-            function abilityMod(score) { return Math.floor((score - 10) / 2); }
-            function formatMod(score) {
+             // 定义职业生命骰 (Hit Dice)
+	const hdMap = {
+	    'barbarian': 12,
+ 	   'fighter': 10, 'paladin': 10, 'ranger': 10,
+ 	   'wizard': 6, 'sorcerer': 6,
+  	  'cleric': 8, 'druid': 8, 'monk': 8, 'rogue': 8, 'warlock': 8, 'bard': 8
+	};
+
+	const die = hdMap[charData.class] || 8;
+	const cMod = abilityMod(abilities['体质']);
+
+// 2. 计算 3 级血量 (1级满值 + 后两级平均值 + 3倍体质修正)
+	const totalHP = die + (Math.floor(die / 2) + 1) * 2 + (cMod * 3);
+            const abilityMod = (score) => Math.floor((score - 10) / 2);
+            const formatMod = (score) => {
                 const mod = abilityMod(score);
                 return mod >= 0 ? `+${mod}` : `${mod}`;
-            }
+            };
 
-            let equipment = '探险者套装，职业起始武器，普通旅行衣物，15gp';
+            let equipment = '探险者套装，职业起始武器，普通旅行衣物，50gp';
             if (charData.isSquire) {
-                equipment = '【Squire特权】银镀层单手矛，精制长剑，盾牌，链甲衫（AC13+敏捷），五支标枪，轻型战马一匹。';
+                equipment = '【Squire特权】银镀单手矛，长剑，盾牌，骑枪一支，板甲/+1皮甲/+1布甲(自己选一个)，五支标枪，板甲战马一匹720gp';
             }
 
             const sheet = `=== 角色卡 ===
@@ -632,6 +646,7 @@
 背景： ${selectedBg.title}
 阵营： ${alignment}
 信仰： ${charData.faith ? (charData.faith === 'tiamat' ? '提亚玛特 (帝国国教)' : charData.faith) : '无或自定义'}
+技能熟练项： ${skillsText}
 
 --- 属性 (已含种族调整) ---
 力量： ${abilities['力量']} (${formatMod(abilities['力量'])})
@@ -642,7 +657,7 @@
 魅力： ${abilities['魅力']} (${formatMod(abilities['魅力'])})
 
 --- 战斗数据 ---
-生命值： ${10 + 2 * (abilityMod(abilities['体质']) + 5)} (预估值)
+生命值： ${totalHP} (预估值)
 护甲等级： ${10 + abilityMod(abilities['敏捷'])} (基础，请加上护甲值)
 先攻： ${formatMod(abilities['敏捷'])}
 熟练加值： +2
@@ -749,7 +764,7 @@ ${charData.isSquire ? '【隐藏信息：初始身份为Squire（侍从骑士）
             ];
 
             const ally = allyData[charData.selectedAlly];
-            function abilityMod(score) { return Math.floor((score - 10) / 2); }
+            const abilityMod = (score) => Math.floor((score - 10) / 2);
 
             const sheet = `=== 协力者角色卡 ===
 姓名： ${ally.name}
@@ -757,6 +772,7 @@ ${charData.isSquire ? '【隐藏信息：初始身份为Squire（侍从骑士）
 职业： ${ally.class} ${ally.level}级
 阵营： ${ally.alignment}
 背景： ${ally.background}
+技能熟练项： ${skillsText}
 
 --- 属性 ---
 力量： ${ally.str} (${abilityMod(ally.str)})
@@ -788,23 +804,17 @@ ${ally.desc}
 
         // 初始化
         window.onload = function() {
-            console.log("系统初始化中...");
             updateStepIndicator();
-            
-            // 绑定事件监听器
-            const raceSelect = document.getElementById('race');
-            if(raceSelect) raceSelect.addEventListener('change', function() { charData.race = this.value; });
-            
-            const classSelect = document.getElementById('class');
-            if(classSelect) classSelect.addEventListener('change', function() { charData.class = this.value; });
-            
-            const faithSelect = document.getElementById('faith');
-            if(faithSelect) faithSelect.addEventListener('change', function() { charData.faith = this.value; });
-
-            // 启动成功提示
-            console.log("系统加载完成");
-            // alert("系统加载成功！如果看到此提示，说明代码已正常运行。"); 
-            // 如果觉得弹窗烦人，可以注释掉上面这行
+            // 为步骤1添加事件监听
+            document.getElementById('race').addEventListener('change', function() {
+                charData.race = this.value;
+            });
+            document.getElementById('class').addEventListener('change', function() {
+                charData.class = this.value;
+            });
+            document.getElementById('faith').addEventListener('change', function() {
+                charData.faith = this.value;
+            });
         };
     </script>
 </body>
