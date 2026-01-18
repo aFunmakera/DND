@@ -531,21 +531,39 @@
             // 基于用户选择生成三个模拟模板
             // 实际应用中，这里可以根据职业和阵营进行复杂的if/else分支
             charData.backgroundTemplates = [
-                {
-                    title: "帝国的利刃",
-                    description: "你曾在军队或准军事组织中服役。虽然因为某种原因离开了建制，但你依然保持着军人的纪律与效率。适合守序阵营的角色。"
-                },
-                {
-                    title: "荒野的幸存者",
-                    description: "在提亚曼瑟严酷的自然环境或战乱的边境中长大。你学会了不惜一切代价活下去，无论手段是否光彩。适合中立或混乱阵营的角色。"
-                },
-                {
-                    title: "古老秘密的追寻者",
-                    description: "你对这片土地下埋藏的历史比对当前的战争更感兴趣。也许是为了力量，也许是为了知识，你踏上了旅途。适合法系或智力型角色。"
-                }
-            ];
+const backgroundDatabase = {
+    // 格式为 "国籍-阵营-职业"
+    "tiamanther-Lawful Good-fighter": [
+        { title: "帝国黎明骑士", description: "..." },
+        { title: "退役金龙军官", description: "..." },
+        { title: "誓约守护者", description: "..." }
+    ],
+    "tiamanther-Lawful Good-ranger": [
+        { title: "行省边境巡逻官", description: "..." },
+        { title: "皇家猎场看守", description: "..." },
+        { title: "圣地向导", description: "..." }
+    ],
+    // 兜底默认值 (当匹配不到精确组合时使用)
+    "default": [
+        { title: "平民英雄", description: "..." },
+        { title: "无名士兵", description: "..." },
+        { title: "乱世幸存者", description: "..." }
+    ]
+};
 
-            charData.backgroundTemplates.forEach((bg, index) => {
+// 2. 在生成逻辑中提取
+function getTemplates(nationality, alignment, className) {
+    // 生成唯一的复合索引 Key
+    const key = `${nationality}-${alignment}-${className}`;
+    
+    // 从数据库中提取，如果找不到完全匹配的，就返回默认值
+    return backgroundDatabase[key] || backgroundDatabase["default"];
+}
+
+// 3. 应用到你的 charData
+const templates = getTemplates(charData.nationality, charData.alignment, charData.class);
+charData.backgroundTemplates = templates;
+			charData.backgroundTemplates.forEach((bg, index) => {
                 const bgCard = document.createElement('div');
                 bgCard.className = 'option-card';
                 bgCard.innerHTML = `
@@ -819,3 +837,4 @@ ${ally.desc}
 </body>
 
 </html>
+
