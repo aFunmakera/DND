@@ -549,34 +549,28 @@
             let summary = "";
 
             // 国籍描述
-            if (nat === 'tiamanther') summary += "你出生在巨龙阴影下的提亚曼瑟，在这个秩序森严的国度，力量就是一切。";
-            else if (nat === 'mulhorand') summary += "你来自古老的穆尔霍兰德，神王的光辉照耀着你的童年，但阴影也在角落滋生。";
-            else summary += "你来自遥远的费伦大陆，带着异乡人的眼光踏入了这片龙之土地。";
-
-            // 父母地位描述
-            /* === 在这里填入父母地位的描述 === */
             if (nat === 'tiamanther') {
-                if (parent === 'poor') summary += " 你的父母生活在Tiamanther某一位贵族的领地之内，不幸的是，这位贵族实在没什么治理的能力。你的家庭整日辛勤工作却仅能填饱肚子而已";
-                else if (parent === 'common') summary += " 你的家庭是生活在Tiamanther的普通人，或许是基层官吏，或许是农民，总之生活平淡而安稳。虽然不是大富大贵，但至少你的童年衣食无忧，也能接受一些基础的教育。";
-                else if (parent === 'burgher') summary += " 你的父母是Tiamanther的中产阶级，或许是大商人，或许是高级官僚，也或许是高级技术人员，总之过着令普通人艳羡的生活。你的童年餐桌上从不缺乏肉食，也接受着良好的教育。";
-                else if (parent === 'noble') summary += " 你的父母是Tiamanther的受封骑士，拥有者自己的领地。你的童年享受着优良的物质生活，也接受着最严苛的教育，学习着击杀敌人的技巧以及治理领地的知识。";
+                if (parent === 'poor') summary += "你的父母生活在Tiamanther某一位贵族的领地之内，不幸的是，这位贵族实在没什么治理的能力。你的家庭整日辛勤工作却仅能填饱肚子而已。";
+                else if (parent === 'common') summary += "你的家庭是生活在Tiamanther的普通人，或许是基层官吏，或许是农民，总之生活平淡而安稳。虽然不是大富大贵，但至少你的童年衣食无忧，也能接受一些基础的教育。";
+                else if (parent === 'burgher') summary += "你的父母是Tiamanther的中产阶级，或许是大商人，或许是高级官僚，也或许是高级技术人员，总之过着令普通人艳羡的生活。你的童年餐桌上从不缺乏肉食，也接受着良好的教育。";
+                else if (parent === 'noble') summary += "你的父母是Tiamanther的受封骑士，拥有者自己的领地。你的童年享受着优良的物质生活，也接受着最严苛的教育，学习着击杀敌人的技巧以及治理领地的知识。";
             }
-            // 穆尔霍兰德 (Mulhorand) - 神权政治、奴隶制、古老传统风格
             else if (nat === 'mulhorand') {
-                if (parent === 'poor') summary += " 你的父母生活在Mulhorand的最底层，饥饿不过是生活中最微不足道的困难之一。你的童年不得不四处乞讨，能够长大实属Bes(幸运之神)眷顾";
-                else if (parent === 'common') summary += " 你的父母是Mulhorand的普通人。生活虽然困顿，但至少不用饿肚子。在Horus-Re的光辉下获得心灵的慰藉和免受奴役的权利。";
-                else if (parent === 'burgher') summary += " 你的父母或许是服务于Mulhorand神权机构的基层官吏，或许是大商人，总之掌握着知识，技艺与财富，生活优渥且受人尊敬。";
-                else if (parent === 'noble') summary += " 你的父母是Mulhorand的教区总管(Papal Vicars)，掌管着一块肥沃的土地，你的童年享受着最优质的生活。";
+                if (parent === 'poor') summary += "你的父母生活在Mulhorand的最底层，饥饿不过是生活中最微不足道的困难之一。你的童年不得不四处乞讨，能够长大实属Bes(幸运之神)眷顾。";
+                else if (parent === 'common') summary += "你的父母是Mulhorand的普通人。生活虽然困顿，但至少不用饿肚子。在Horus-Re的光辉下获得心灵的慰藉和免受奴役的权利。";
+                else if (parent === 'burgher') summary += "你的父母或许是服务于Mulhorand神权机构的基层官吏，或许是大商人，总之掌握着知识，技艺与财富，生活优渥且受人尊敬。";
+                else if (parent === 'noble') summary += "你的父母是Mulhorand的教区总管(Papal Vicars)，掌管着一块肥沃的土地，你的童年享受着最优质的生活。";
             }
-            // 费伦其他地区 (Faerun) - 传统的D&D中世纪奇幻风格
-            else {
-                if (parent === 'poor') summary += " 你的父母是拥挤城市中的乞丐或乡野间的佃农，在这个冷漠的世界里，贫穷就像一种无法摆脱的诅咒，能够长大纯属幸运之神的眷顾。";
-                else if (parent === 'common') summary += " 你的家庭是典型的费伦平民，经营着一家小店铺或耕种着几亩薄田，生活平平淡淡，最大的愿望就是远离怪物的侵扰。";
-                else if (parent === 'burgher') summary += " 你的父母是富裕的行会商人或知名工匠家庭，从未体验过饥饿的滋味，童年充满了书本、艺术和精致的食物。";
-                else if (parent === 'noble') summary += " 你的父母是旧大陆中的小贵族，家族的纹章彰显着你的血脉，自幼便接受着礼仪、剑术与政治的精英教育。";
+            else { // Faerun
+                if (parent === 'poor') summary += "你的父母是拥挤城市中的乞丐或乡野间的佃农，在这个冷漠的世界里，贫穷就像一种无法摆脱的诅咒，能够长大纯属幸运之神的眷顾。";
+                else if (parent === 'common') summary += "你的家庭是典型的费伦平民，经营着一家小店铺或耕种着几亩薄田，生活平平淡淡，最大的愿望就是远离怪物的侵扰。";
+                else if (parent === 'burgher') summary += "你的父母是富裕的行会商人或知名工匠家庭，从未体验过饥饿的滋味，童年充满了书本、艺术和精致的食物。";
+                else if (parent === 'noble') summary += "你的父母是旧大陆中的小贵族，家族的纹章彰显着你的血脉，自幼便接受着礼仪、剑术与政治的精英教育。";
             }            
 
-            // 成年地位描述 (结合职业
+            // --- 第二部分：成年现状 ---
+            
+            // 1. Tiamanther 成年
             if (nat === 'tiamanther') {
                 // 现状：贫民
                 if (adult === 'poor') {
@@ -584,53 +578,53 @@
                     else if (parent === 'noble') summary += " 然而，你直到成年既没能成为一名拥有职业等级的超凡者，也没能学好文化知识，失望的父母将你逐出家门，你不得不在泥泞中挣扎，以换取生存的财富。"; 
                     else summary += " 可惜一场突如其来的变故打破了平静的生活，你跌落谷底，不得不重新体验生存的残酷。";
                 }
-		// 现状：平民与市民
+                // 现状：平民与市民
                 else if (adult === 'common' || adult === 'burgher') {
                     if (parent === 'poor') summary += " 但你没有屈服于命运。你通过自己的勤劳，成功从贫民中脱困，用自己的双手为自己挣来了一份前程。"; 
                     else if (parent === 'noble') summary += " 然而，你直到成年也没能成为一名拥有职业等级的超凡者，好在学到了不少文化知识。你的父母为你找了一份普通但清闲的工作，以让你有充足的时间接受武力的训练，希望有朝一日你能突破自我。";
                     else summary += " 成年之后，你与你的父母一样勤勉工作，过着安稳但却一眼就能望到头的生活。";
-		// 现状：平民与市民
+                } // <--- 修复：之前这里少了一个大括号
+                // 现状：贵族
                 else if (adult === 'noble') {
                     if (parent === 'poor') summary += " 然而，你并没有被这份困顿所打败，勇敢的挑战着命运。凭借着过人的天赋与努力，你成功成为了一名超凡者，被帝国授予爵士身份，准备为获得封地而进一步努力。"; 
                     else if (parent === 'noble') summary += " 十数年如一日的努力终得回报，你成功成为了一名超凡者并被帝国授予爵士身份。承载着家族的希望，你已磨好刀剑，静候时机。"; 
                     else summary += " 之后，你在学院中崭露出不菲的天赋，加之辛勤的努力，你成功考上了帝国军事大学并成为了一名超凡者，毕业后被授予爵士身份，跻身统治阶级，光耀门楣。现在，你正等待着机会，希望能更进一步获得封地。"; 
                 }
             }
-            // 2. 穆尔霍兰德 (Mulhorand) - 成年轨迹
+            // 2. Mulhorand 成年
             else if (nat === 'mulhorand') {
                 // 现状：贫民
                 if (adult === 'poor'|| adult === 'common') {
                     if (parent === 'noble') summary += " 然而，一场突如其来的横祸打断了你的生活，你的父母因为在政治斗争中失败而被指控为异端。所幸公正的法官并未因你父母的行为而判你有罪，但你也失去了一切，不得不开始体验生活的残酷。";
-                    else if (parent === 'burgher') summary += " 然而，一场意外打断了你的生活。你失去了一切，不得不开始体验生活的残酷"; 
-		else summary += " 尽管你竭尽全力想要摆脱贫困，但哪有那般容易。你还是像你的祖辈一样，被贫穷所困扰，只得将希望寄托于来世。";
+                    else if (parent === 'burgher') summary += " 然而，一场意外打断了你的生活。你失去了一切，不得不开始体验生活的残酷。"; 
+                    else summary += " 尽管你竭尽全力想要摆脱贫困，但哪有那般容易。你还是像你的祖辈一样，被贫穷所困扰，只得将希望寄托于来世。";
                 }
                 // 现状：平民/市民
                 else if (adult === 'burgher') {
-                    if (parent === 'poor'|| adult === 'common') summary += " 但你并没有屈服于命运，你通过自己的天赋与努力，成功挤入社会的中产阶层，终于可以为了自己而活。";
+                    if (parent === 'poor'|| parent === 'common') summary += " 但你并没有屈服于命运，你通过自己的天赋与努力，成功挤入社会的中产阶层，终于可以为了自己而活。"; // 修复：这里应该是判断parent
                     else if (parent === 'noble') summary += " 然而作为家族的次子，你无法继承爵位，不得不离开家族的庇护。你的家族用自己的人脉，为你在神权官僚体系中谋得了一份差事，免于沦为底层，但你的心中难免有所遗憾。";
                     else summary += " 你延续了家族的事业，在这个古老的国度里守住了这份基业，安稳度日。";
                 }
                 // 现状：贵族
                 else if (adult === 'noble') {
-                    if (adult === 'poor'|| adult === 'common') summary += " 就当你以为自己这辈子也就这样的时候，Bes展现了她对你的眷顾。
-你觉醒了神性血脉，被大祭司认定为神选之人。你一步登天，从无人在意的尘埃变成了受人膜拜的神官贵族。";
+                    // 修复：字符串不能换行，且逻辑应该是判断parent
+                    if (parent === 'poor'|| parent === 'common') summary += " 就当你以为自己这辈子也就这样的时候，Bes展现了她对你的眷顾。你觉醒了神性血脉，被大祭司认定为神选之人。你一步登天，从无人在意的尘埃变成了受人膜拜的神官贵族。";
                     else if (parent === 'noble') summary += " 你理所当然地继承了神圣的职责。无论你内心是否虔诚，你都熟练地运用着神权赋予的威严来统治下层阶级。";
                     else summary += " 之后，你凭借对神学的深刻理解，成功被神殿吸纳，穿上了象征权力的祭司长袍，跨越了凡人与神仆的界限，成为了家族的骄傲。";
                 }
             }
-
-            // 3. 费伦其他地区 (Faerun) - 成年轨迹
+            // 3. Faerun 成年
             else {
                 // 现状：贫民
                 if (adult === 'poor') {
                     if (parent === 'noble') summary += " 无论是家族的没落、政治联姻的失败还是你个人的放荡不羁，总之你失去了继承权。如今你除了一个高贵的姓氏，一无所有。";
-			else if (adult === 'common' || adult === 'burgher') summary += " 可惜一场突如其来的灾难毁掉了你的生活，你的家乡在怪物的袭击下沦为了废墟，你侥幸逃脱，但也失去了一切。";
+                    else if (parent === 'common' || parent === 'burgher') summary += " 可惜一场突如其来的灾难毁掉了你的生活，你的家乡在怪物的袭击下沦为了废墟，你侥幸逃脱，但也失去了一切。"; // 修复：这里应该是判断parent
                     else summary += " 尽管你向往更好的生活，但现实是残酷的。你依然身无分文，为了下一顿饭而四处奔波。";
                 }
                 // 现状：平民/市民
                 else if (adult === 'common' || adult === 'burgher') {
                     if (parent === 'poor') summary += " 你离开了贫瘠的家乡，学会了一门手艺或做起了小买卖。虽然不算富裕，但你已经比父辈过得好多了。";
-                    else if (parent === 'noble') summary += " 然而作为家族的次子，你无法继承爵位，不得不离开家族的庇护。所幸你接受到的教育让你不至于沦为。"";
+                    else if (parent === 'noble') summary += " 然而作为家族的次子，你无法继承爵位，不得不离开家族的庇护。所幸你接受到的教育让你不至于沦为底层。"; // 修复：去掉了多余的引号
                     else summary += " 你继承了父母的家业，过着平平淡淡的生活。生活并不美好，但对你来讲至少还未展现残酷的一面。";
                 }
                 // 现状：贵族
@@ -640,12 +634,11 @@
                     else summary += " 通过精明的商业运作或卓越的魔法天赋，你跻身于上流社会，成为了受人尊敬的新贵。";
                 }
             }
-            charData.lifePathSummary = summary; // 保存这段摘要
+            
+            charData.lifePathSummary = summary; 
 
-            // 3. 生成具体的三个故事选项 (根据特定条件匹配)
+            // 3. 生成具体的三个故事选项
             let options = [];
-
-            // === 逻辑分支开始：在这里填入你的具体故事 ===
             
             // 示例情况：Tiamanther + 守序善良 + 父母贫民 + 自己贵族 + 战士
             if (nat === 'tiamanther' && align === 'lawfulgood' && parent === 'poor' && adult === 'noble' && cls === 'fighter') {
@@ -681,7 +674,7 @@
                     }
                 ];
             }
-            // === 默认兜底选项 (防止没有匹配到特定条件时空白) ===
+            // === 默认兜底选项 ===
             else {
                 options = [
                     {
@@ -718,7 +711,6 @@
                 container.appendChild(bgCard);
             });
         }
-
         // 生成最终角色卡
         function generateCharacterSheet() {
             nextStep(6); 
@@ -973,3 +965,4 @@ ${ally.desc}
     </script>
 </body>
 </html>
+
