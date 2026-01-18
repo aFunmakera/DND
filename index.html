@@ -633,12 +633,6 @@
 
 // 2. 计算 3 级血量 (1级满值 + 后两级平均值 + 3倍体质修正)
 	const totalHP = die + (Math.floor(die / 2) + 1) * 2 + (cMod * 3);
-            const abilityMod = (score) => Math.floor((score - 10) / 2);
-            const formatMod = (score) => {
-                const mod = abilityMod(score);
-                return mod >= 0 ? `+${mod}` : `${mod}`;
-            };
-
             let equipment = '探险者套装，职业起始武器，普通旅行衣物，50gp';
             if (charData.isSquire) {
                 equipment = '【Squire特权】银镀单手矛，长剑，盾牌，骑枪一支，板甲/+1皮甲/+1布甲(自己选一个)，五支标枪，板甲战马一匹720gp';
@@ -824,3 +818,4 @@ ${ally.desc}
 </body>
 
 </html>
+
