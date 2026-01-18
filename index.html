@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
@@ -8,6 +7,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700;900&family=MedievalSharp&family=Noto+Serif+SC:wght@400;700&display=swap" rel="stylesheet">
     <style>
+        /* 保持原有样式不变 */
         :root {
             --color-primary: #8B0000;
             --color-secondary: #D4AF37;
@@ -130,7 +130,14 @@
 
     <section class="intro">
         “旅者啊，欢迎来到龙的国度。请聆听随风传来的号角声……那来自东方的讯息。<br><br>
-        <!-- (省略部分长文本以保持代码整洁，你的原文已保留) -->
+        起初，对于剑湾的领主们而言，东边那场Unther与Tymanther的战争，不过是茶余饭后用来打发时间的谈资。古老的神王想要碾碎那群流亡的龙裔——这毫无悬念，就像巨石注定压碎鸟蛋。我们曾以为，那个名字将永远埋葬在历史的尘埃里。<br><br>
+        直到那一天，天空被五色的雷霆撕裂。<br><br>
+        传闻中，一头巨龙遮蔽了太阳，神王的军队在龙息中化为灰烬。奇迹——亦或是灾厄——就这样降临了。‘提亚曼瑟’（Tiamanther）的旗帜在废墟上立起。但那时，谁又真的在意呢？毕竟，那只是一个在二十年战火中流干了鲜血的空壳，一个由破碎的砖石和尸骨堆砌的穷乡僻壤。法师们在高塔中断言，它需要一百年才能喘过气来。<br><br>
+        我们都错了。<br><br>
+        当我们在这个世界的一角醉生梦死时，那头盘踞在废墟上的巨龙并没有舔舐伤口，而是在灰烬中磨砺爪牙。没有人看清他是如何做到的——只知道当穆尔霍姆（Murghom）在沉默中被一口吞下时，大地开始震颤。<br><br>
+        如今，那双贪婪的竖瞳已经越过边境，死死盯住了穆尔霍兰德的黄金神殿。不再是挣扎求存，而是主动捕食。<br><br>
+        你听到了吗？那不是雷声，那是东费伦统一战争的战鼓，是成千上万身披重甲的军团踏过大地的轰鸣。巨龙来了，而这一次，他想要吞下的不仅仅是土地。<br><br>
+        现在，在这个风暴汇聚的前夜，在这片即将被战火点燃的土地上……<br><br>
         <strong>请告诉我，你原本是谁？以及，你为何而战？”</strong>
     </section>
 
@@ -203,7 +210,6 @@
                 <option value="Elf">精灵神系</option>
                 <option value="mulhorand">Mulhorand多神教</option>
                 <option value="other">无</option>
-
             </select>
             <div class="hidden-info">提示：信仰提亚玛特可在帝国境内获得5%的税收减免，巴哈姆特有0.01%税收减免</div>
         </div>
@@ -228,9 +234,8 @@
                 <div class="option-card" style="opacity: 0.5; cursor: not-allowed; border-style: dashed; background: #2a2a2a;">
                     <label style="color: #666;">[数据删除] (简单模式)</label>
                     <div class="desc" style="color: #555;">别找了，没有简单模式。在这种乱世，谁也别想过得轻松。</div>
-    </div>
+                </div>
             </div>
-
         </div>
         <div class="form-group">
             <label>你父母的社会地位是？</label>
@@ -238,7 +243,7 @@
                 <div class="option-card" onclick="selectOption(this, 'parentStatus')">
                     <input type="radio" id="ps-poor" name="parentStatus" value="poor">
                     <label for="ps-poor">贫民</label>
-                    <div class="desc">在非中央地区挣扎求生。</div>
+                    <div class="desc">每日为了生计发愁</div>
                 </div>
                 <div class="option-card" onclick="selectOption(this, 'parentStatus')">
                     <input type="radio" id="ps-common" name="parentStatus" value="common">
@@ -252,12 +257,11 @@
                 </div>
                 <div class="option-card" onclick="selectOption(this, 'parentStatus')">
                     <input type="radio" id="ps-noble" name="parentStatus" value="noble">
-                    <label for="ps-noble">小贵族 (骑士/乡绅)</label>
+                    <label for="ps-noble">小贵族</label>
                     <div class="desc">拥有小块封地与军事义务。</div>
                 </div>
             </div>
-            <div class="hidden-info">设定提醒：提亚曼瑟的贵族头衔与封地不可继承，仅授予"专业者"(Pro)。沃斯蒂加没有贫民窟。</div>
-        </div>
+         </div>
         <div class="button-container">
             <button class="btn-prev" onclick="prevStep(1)">上一步</button>
             <button class="btn-next" onclick="nextStep(3)">下一步</button>
@@ -267,9 +271,8 @@
     <!-- 步骤3：成年与社会地位 -->
     <div id="step3" class="wizard-step">
         <h2>第三步：成年的道路</h2>
-        <p>岁月磨砺了你。如今，你站在何处？</p>
         <div class="form-group">
-            <label>成年后，你的社会地位变成了...</label>
+            <label>成年后，你与自己的父母告别，你的社会地位变成了...</label>
             <div class="radio-group">
                 <div class="option-card" onclick="selectOption(this, 'adultStatus')">
                     <input type="radio" id="poor" name="adultStatus" value="Poor">
@@ -355,7 +358,7 @@
 
     <!-- 步骤5：背景选择 -->
     <div id="step5" class="wizard-step">
-        <h2>第五步：命运的织线</h2>
+        <h2>出于什么原因，你来到了这里？</h2>
         <p>基于你的选择，系统生成了三个可能的过去。请选择一个作为你的角色背景。</p>
         <div id="background-options-container">
             <!-- 背景选项将由JS动态生成 -->
@@ -397,7 +400,7 @@
         <div id="final-prompt-container" style="display:none;">
             <div class="final-prompt">
                 <h3>🎭 游玩前的重要提示</h3>
-                <p><strong>I.</strong> 请将上方生成的<strong>角色卡</strong>完整填入角色设定当中，将<strong>协力者角色卡</strong>填入补充设定当中。<strong>
+                <p><strong>I.</strong> 请将上方生成的<strong>角色卡</strong>完整填入角色设定当中，将<strong>协力者角色卡</strong>填入补充设定当中。</p>
                 <p><strong>II.</strong> 这是一个真实的世界，在做出抉择之前，请先三思。尽管如此，仍然鼓励进行角色扮演，即按照你创建角色的性格与背景进行选择，以获得最佳游戏体验。</p>
                 <p><strong>III.</strong> 尽管难度不低，但就如同真实世界的事实一样，只要找到正确的人与正确的方法，总有一线生机存在。选择大于努力，同时，记得看看自己的角色，哪怕你很聪明能通过智慧解决问题，但你的角色卡智力太低也很可能导致在一个低DC检定中仍然失败。适合的才是最好的</p>
                 <p><strong>IV.</strong> D20=20也救不了极其愚蠢的行为，D20=1也不会让正确的努力完全付诸东流。属性检定中的20与1都只是一个普通的数字，如果你的行为让AI判定DC难度为30，那么投出20也只有体面的失败。</p>
@@ -427,10 +430,11 @@
             adultStatus: '',
             lawAxis: '',
             goodAxis: '',
-            selectedBackgroundIndex: null, // 存储选择的背景索引
-            backgroundTemplates: [], // 存储生成的背景选项数据
+            selectedBackgroundIndex: null,
+            backgroundTemplates: [],
             isSquire: false,
-            selectedAlly: null
+            selectedAlly: null,
+            lifePathSummary: '' // 新增：用于存储骑砍式的人生轨迹文本
         };
 
         const stepElements = [1,2,3,4,5,6,7];
@@ -510,15 +514,19 @@
 
         function determineSquireStatus() {
             charData.isSquire = false;
+            // 注意：HTML中adultStatus的值首字母大写，parentStatus是小写，这里做统一处理
+            const adultStatusLower = charData.adultStatus.toLowerCase();
+            const parentStatusLower = charData.parentStatus.toLowerCase();
+
             if (charData.nationality === 'tiamanther' && 
-                charData.adultStatus === 'pro' && 
-                (charData.parentStatus === 'noble' || charData.parentStatus === 'burgher')) {
+                (adultStatusLower === 'noble' || adultStatusLower === 'pro') && // 假设Noble或Pro都算
+                (parentStatusLower === 'noble' || parentStatusLower === 'burgher')) {
                 charData.isSquire = true;
                 console.log('隐藏身份：初始为Squire（侍从骑士）');
             }
         }
 
-        // 生成背景选项（修复了逻辑）
+        // === 核心逻辑修改：骑砍式背景生成 ===
         function generateBackgroundOptions() {
             saveStepData(4);
             if (!charData.lawAxis || !charData.goodAxis) {
@@ -529,23 +537,171 @@
             const container = document.getElementById('background-options-container');
             container.innerHTML = '';
 
-            // 基于用户选择生成三个模拟模板
-            // 实际应用中，这里可以根据职业和阵营进行复杂的if/else分支
-            charData.backgroundTemplates = [
-                {
-                    title: "帝国的利刃",
-                    description: "你曾在军队或准军事组织中服役。虽然因为某种原因离开了建制，但你依然保持着军人的纪律与效率。适合守序阵营的角色。"
-                },
-                {
-                    title: "荒野的幸存者",
-                    description: "在提亚曼瑟严酷的自然环境或战乱的边境中长大。你学会了不惜一切代价活下去，无论手段是否光彩。适合中立或混乱阵营的角色。"
-                },
-                {
-                    title: "古老秘密的追寻者",
-                    description: "你对这片土地下埋藏的历史比对当前的战争更感兴趣。也许是为了力量，也许是为了知识，你踏上了旅途。适合法系或智力型角色。"
-                }
-            ];
+            // 1. 统一数据格式 (全部转小写以方便匹配)
+            const nat = charData.nationality; // tiamanther, mulhorand, faerun
+            const parent = charData.parentStatus.toLowerCase(); // poor, common, burgher, noble
+            const adult = charData.adultStatus.toLowerCase(); // poor, common, burgher, noble
+            const align = charData.lawAxis + charData.goodAxis; // lawfulgood, chaoticneutral, etc.
+            const cls = charData.class; // fighter, wizard, etc.
 
+            // 2. 生成“人生轨迹”前缀 (Mount & Blade 风格)
+            // 这里你可以根据需要修改每一段的描述
+            let summary = "";
+
+            // 国籍描述
+            if (nat === 'tiamanther') summary += "你出生在巨龙阴影下的提亚曼瑟，在这个秩序森严的国度，力量就是一切。";
+            else if (nat === 'mulhorand') summary += "你来自古老的穆尔霍兰德，神王的光辉照耀着你的童年，但阴影也在角落滋生。";
+            else summary += "你来自遥远的费伦大陆，带着异乡人的眼光踏入了这片龙之土地。";
+
+            // 父母地位描述
+            /* === 在这里填入父母地位的描述 === */
+            if (nat === 'tiamanther') {
+                if (parent === 'poor') summary += " 你的父母生活在Tiamanther某一位贵族的领地之内，不幸的是，这位贵族实在没什么治理的能力。你的家庭整日辛勤工作却仅能填饱肚子而已";
+                else if (parent === 'common') summary += " 你的家庭是生活在Tiamanther的普通人，或许是基层官吏，或许是农民，总之生活平淡而安稳。虽然不是大富大贵，但至少你的童年衣食无忧，也能接受一些基础的教育。";
+                else if (parent === 'burgher') summary += " 你的父母是Tiamanther的中产阶级，或许是大商人，或许是高级官僚，也或许是高级技术人员，总之过着令普通人艳羡的生活。你的童年餐桌上从不缺乏肉食，也接受着良好的教育。";
+                else if (parent === 'noble') summary += " 你的父母是Tiamanther的受封骑士，拥有者自己的领地。你的童年享受着优良的物质生活，也接受着最严苛的教育，学习着击杀敌人的技巧以及治理领地的知识。";
+            }
+            // 穆尔霍兰德 (Mulhorand) - 神权政治、奴隶制、古老传统风格
+            else if (nat === 'mulhorand') {
+                if (parent === 'poor') summary += " 你的父母生活在Mulhorand的最底层，饥饿不过是生活中最微不足道的困难之一。你的童年不得不四处乞讨，能够长大实属Bes(幸运之神)眷顾";
+                else if (parent === 'common') summary += " 你的父母是Mulhorand的普通人。生活虽然困顿，但至少不用饿肚子。在Horus-Re的光辉下获得心灵的慰藉和免受奴役的权利。";
+                else if (parent === 'burgher') summary += " 你的父母或许是服务于Mulhorand神权机构的基层官吏，或许是大商人，总之掌握着知识，技艺与财富，生活优渥且受人尊敬。";
+                else if (parent === 'noble') summary += " 你的父母是Mulhorand的教区总管(Papal Vicars)，掌管着一块肥沃的土地，你的童年享受着最优质的生活。";
+            }
+            // 费伦其他地区 (Faerun) - 传统的D&D中世纪奇幻风格
+            else {
+                if (parent === 'poor') summary += " 你的父母是拥挤城市中的乞丐或乡野间的佃农，在这个冷漠的世界里，贫穷就像一种无法摆脱的诅咒，能够长大纯属幸运之神的眷顾。";
+                else if (parent === 'common') summary += " 你的家庭是典型的费伦平民，经营着一家小店铺或耕种着几亩薄田，生活平平淡淡，最大的愿望就是远离怪物的侵扰。";
+                else if (parent === 'burgher') summary += " 你的父母是富裕的行会商人或知名工匠家庭，从未体验过饥饿的滋味，童年充满了书本、艺术和精致的食物。";
+                else if (parent === 'noble') summary += " 你的父母是旧大陆中的小贵族，家族的纹章彰显着你的血脉，自幼便接受着礼仪、剑术与政治的精英教育。";
+            }            
+
+            // 成年地位描述 (结合职业
+            if (nat === 'tiamanther') {
+                // 现状：贫民
+                if (adult === 'poor') {
+                    if (parent === 'poor') summary += " 尽管你拼尽全力想要摆脱贫困，但总是差一点运气，你仍然位于社会的底层，仅仅只能混得温饱，精打细算着每一笔收入。";
+                    else if (parent === 'noble') summary += " 然而，你直到成年既没能成为一名拥有职业等级的超凡者，也没能学好文化知识，失望的父母将你逐出家门，你不得不在泥泞中挣扎，以换取生存的财富。"; 
+                    else summary += " 可惜一场突如其来的变故打破了平静的生活，你跌落谷底，不得不重新体验生存的残酷。";
+                }
+		// 现状：平民与市民
+                else if (adult === 'common' || adult === 'burgher') {
+                    if (parent === 'poor') summary += " 但你没有屈服于命运。你通过自己的勤劳，成功从贫民中脱困，用自己的双手为自己挣来了一份前程。"; 
+                    else if (parent === 'noble') summary += " 然而，你直到成年也没能成为一名拥有职业等级的超凡者，好在学到了不少文化知识。你的父母为你找了一份普通但清闲的工作，以让你有充足的时间接受武力的训练，希望有朝一日你能突破自我。";
+                    else summary += " 成年之后，你与你的父母一样勤勉工作，过着安稳但却一眼就能望到头的生活。";
+		// 现状：平民与市民
+                else if (adult === 'noble') {
+                    if (parent === 'poor') summary += " 然而，你并没有被这份困顿所打败，勇敢的挑战着命运。凭借着过人的天赋与努力，你成功成为了一名超凡者，被帝国授予爵士身份，准备为获得封地而进一步努力。"; 
+                    else if (parent === 'noble') summary += " 十数年如一日的努力终得回报，你成功成为了一名超凡者并被帝国授予爵士身份。承载着家族的希望，你已磨好刀剑，静候时机。"; 
+                    else summary += " 之后，你在学院中崭露出不菲的天赋，加之辛勤的努力，你成功考上了帝国军事大学并成为了一名超凡者，毕业后被授予爵士身份，跻身统治阶级，光耀门楣。现在，你正等待着机会，希望能更进一步获得封地。"; 
+                }
+            }
+            // 2. 穆尔霍兰德 (Mulhorand) - 成年轨迹
+            else if (nat === 'mulhorand') {
+                // 现状：贫民
+                if (adult === 'poor'|| adult === 'common') {
+                    if (parent === 'noble') summary += " 然而，一场突如其来的横祸打断了你的生活，你的父母因为在政治斗争中失败而被指控为异端。所幸公正的法官并未因你父母的行为而判你有罪，但你也失去了一切，不得不开始体验生活的残酷。";
+                    else if (parent === 'burgher') summary += " 然而，一场意外打断了你的生活。你失去了一切，不得不开始体验生活的残酷"; 
+		else summary += " 尽管你竭尽全力想要摆脱贫困，但哪有那般容易。你还是像你的祖辈一样，被贫穷所困扰，只得将希望寄托于来世。";
+                }
+                // 现状：平民/市民
+                else if (adult === 'burgher') {
+                    if (parent === 'poor'|| adult === 'common') summary += " 但你并没有屈服于命运，你通过自己的天赋与努力，成功挤入社会的中产阶层，终于可以为了自己而活。";
+                    else if (parent === 'noble') summary += " 然而作为家族的次子，你无法继承爵位，不得不离开家族的庇护。你的家族用自己的人脉，为你在神权官僚体系中谋得了一份差事，免于沦为底层，但你的心中难免有所遗憾。";
+                    else summary += " 你延续了家族的事业，在这个古老的国度里守住了这份基业，安稳度日。";
+                }
+                // 现状：贵族
+                else if (adult === 'noble') {
+                    if (adult === 'poor'|| adult === 'common') summary += " 就当你以为自己这辈子也就这样的时候，Bes展现了她对你的眷顾。
+你觉醒了神性血脉，被大祭司认定为神选之人。你一步登天，从无人在意的尘埃变成了受人膜拜的神官贵族。";
+                    else if (parent === 'noble') summary += " 你理所当然地继承了神圣的职责。无论你内心是否虔诚，你都熟练地运用着神权赋予的威严来统治下层阶级。";
+                    else summary += " 之后，你凭借对神学的深刻理解，成功被神殿吸纳，穿上了象征权力的祭司长袍，跨越了凡人与神仆的界限，成为了家族的骄傲。";
+                }
+            }
+
+            // 3. 费伦其他地区 (Faerun) - 成年轨迹
+            else {
+                // 现状：贫民
+                if (adult === 'poor') {
+                    if (parent === 'noble') summary += " 无论是家族的没落、政治联姻的失败还是你个人的放荡不羁，总之你失去了继承权。如今你除了一个高贵的姓氏，一无所有。";
+			else if (adult === 'common' || adult === 'burgher') summary += " 可惜一场突如其来的灾难毁掉了你的生活，你的家乡在怪物的袭击下沦为了废墟，你侥幸逃脱，但也失去了一切。";
+                    else summary += " 尽管你向往更好的生活，但现实是残酷的。你依然身无分文，为了下一顿饭而四处奔波。";
+                }
+                // 现状：平民/市民
+                else if (adult === 'common' || adult === 'burgher') {
+                    if (parent === 'poor') summary += " 你离开了贫瘠的家乡，学会了一门手艺或做起了小买卖。虽然不算富裕，但你已经比父辈过得好多了。";
+                    else if (parent === 'noble') summary += " 然而作为家族的次子，你无法继承爵位，不得不离开家族的庇护。所幸你接受到的教育让你不至于沦为。"";
+                    else summary += " 你继承了父母的家业，过着平平淡淡的生活。生活并不美好，但对你来讲至少还未展现残酷的一面。";
+                }
+                // 现状：贵族
+                else if (adult === 'noble') {
+                    if (parent === 'poor') summary += " 可那仅仅只是你好运的开始而已，你那过人的运气让你突发横财，无论是在遗迹中找到了巨额宝藏，还是刚好捡到了一名冒险者身上的装备，总之你用金币和运气为自己换来了一个头衔。";
+                    else if (parent === 'noble') summary += " 之后，你接过了家族的重担。在权力的斗兽场中勾心斗角，维持着体面的生活。";
+                    else summary += " 通过精明的商业运作或卓越的魔法天赋，你跻身于上流社会，成为了受人尊敬的新贵。";
+                }
+            }
+            charData.lifePathSummary = summary; // 保存这段摘要
+
+            // 3. 生成具体的三个故事选项 (根据特定条件匹配)
+            let options = [];
+
+            // === 逻辑分支开始：在这里填入你的具体故事 ===
+            
+            // 示例情况：Tiamanther + 守序善良 + 父母贫民 + 自己贵族 + 战士
+            if (nat === 'tiamanther' && align === 'lawfulgood' && parent === 'poor' && adult === 'noble' && cls === 'fighter') {
+                options = [
+                    {
+                        title: "军功授爵",
+                        description: "你在边境战争中救下了一位将军的子嗣。凭借这惊人的战功与正直的品格，你被破格提拔并授予爵位。虽然出身卑微，但你誓言用手中的剑守护帝国的法律与弱者。"
+                    },
+                    {
+                        title: "竞技场冠军",
+                        description: "为了给生病的母亲筹钱，你投身于残酷的角斗场。你拒绝在对手失去反抗能力后下杀手，这种骑士精神赢得了观众与领主的喜爱，最终赢得了自由与封地。"
+                    },
+                    {
+                        title: "皇家侍卫的选拔",
+                        description: "在一场针对皇室成员的刺杀中，当时还是卫兵的你挺身而出挡下了毒箭。你的忠诚与无畏让你被选入皇家卫队，从此脱离了贫民窟的泥潭。"
+                    }
+                ];
+            }
+            // 示例情况2：Mulhorand + 混乱中立 + 父母贵族 + 自己贫民 + 游荡者
+            else if (nat === 'mulhorand' && align === 'chaoticneutral' && parent === 'noble' && adult === 'poor' && cls === 'rogue') {
+                options = [
+                    {
+                        title: "家族的叛逆者",
+                        description: "你厌倦了神权政治下虚伪的贵族生活，在一个雨夜偷走了家族的印章离家出走。如今你在下水道与黑市中如鱼得水，虽然贫穷，但你拥有了渴望的自由。"
+                    },
+                    {
+                        title: "政治斗争的牺牲品",
+                        description: "你的家族在神殿的权力斗争中落败，全族被流放。你侥幸逃脱，隐姓埋名。曾经的锦衣玉食化为泡影，现在你只信奉手中的匕首和金币。"
+                    },
+                    {
+                        title: "被诅咒的血脉",
+                        description: "你出生时带有某种被视为不祥的印记，被家族遗弃在贫民窟。你在街头学会了偷窃与欺诈，对所谓的贵族血统嗤之以鼻。"
+                    }
+                ];
+            }
+            // === 默认兜底选项 (防止没有匹配到特定条件时空白) ===
+            else {
+                options = [
+                    {
+                        title: "命运的转折点 (通用)",
+                        description: "一个偶然的机会改变了你的人生轨迹。也许是一次意外的发现，也许是一次生离死别，让你走上了冒险者的道路。"
+                    },
+                    {
+                        title: "执着的追求 (通用)",
+                        description: "你心中有一个无法放下的执念。无论是复仇、寻宝还是寻找失散的亲人，这个目标驱使你离开了原本的生活。"
+                    },
+                    {
+                        title: "被迫的流亡 (通用)",
+                        description: "战争或灾难摧毁了你的家园。你被迫背井离乡，在提亚曼瑟这片陌生的土地上寻找新的立足之地。"
+                    }
+                ];
+            }
+
+            charData.backgroundTemplates = options;
+
+            // 渲染选项卡
             charData.backgroundTemplates.forEach((bg, index) => {
                 const bgCard = document.createElement('div');
                 bgCard.className = 'option-card';
@@ -563,9 +719,9 @@
             });
         }
 
-        // 生成最终角色卡（修复了逻辑）
+        // 生成最终角色卡
         function generateCharacterSheet() {
-            nextStep(6); // 跳转到步骤6
+            nextStep(6); 
             
             const raceNames = {
                 human: '人类', dragonborn: '龙裔', kobold: '狗头人', 
@@ -582,25 +738,24 @@
 
             const alignment = `${lawText[charData.lawAxis] || ''}${goodText[charData.goodAxis] || ''}`;
             
-            // 获取用户选中的背景模板
             const selectedBg = charData.backgroundTemplates[charData.selectedBackgroundIndex];
-	const abilityMod = (score) => Math.floor((score - 10) / 2);
-	const formatMod = (score) => {
-        const mod = abilityMod(score);
-        return mod >= 0 ? `+${mod}` : `${mod}`;
-    };
-            // 简单的属性分配逻辑
-            let abilities = {
-                '力量': 16, '敏捷': 15, '体质': 15, '智力': 10, '感知': 10, '魅力': 8
+            const abilityMod = (score) => Math.floor((score - 10) / 2);
+            const formatMod = (score) => {
+                const mod = abilityMod(score);
+                return mod >= 0 ? `+${mod}` : `${mod}`;
             };
+
+            // 属性与技能逻辑
+            let abilities = { '力量': 16, '敏捷': 15, '体质': 15, '智力': 10, '感知': 10, '魅力': 8 };
             let skillsText = "察觉, 运动";
+            
             if (['fighter', 'barbarian'].includes(charData.class)) {
                 abilities = { '力量':17, '敏捷':15, '体质':17, '智力':8, '感知':10, '魅力':10 };
                 skillsText = "运动, 威吓, 求生"
             } else if (['wizard'].includes(charData.class)) {
                 abilities = { '力量':8, '敏捷':15, '体质':17, '智力':17, '感知':10, '魅力':10 };
                 skillsText = "奥秘, 历史, 调查"
-            }  else if (['cleric'].includes(charData.class)) {
+            } else if (['cleric'].includes(charData.class)) {
                  abilities = { '力量':17, '敏捷':10, '体质':15, '智力':8, '感知':17, '魅力':10 };
                  skillsText = "洞悉, 宗教, 医疗"
             } else if (['sorcerer'].includes(charData.class)) {
@@ -612,27 +767,25 @@
             } else if (['druid'].includes(charData.class)) {
                  abilities = { '力量':8, '敏捷':15, '体质':17, '智力':10, '感知':17, '魅力':10 };
                  skillsText = "察觉, 存活, 自然"
-            }else if ([ 'paladin'].includes(charData.class)) {
+            } else if ([ 'paladin'].includes(charData.class)) {
                  abilities = { '力量':17, '敏捷':8, '体质':15, '智力':10, '感知':10, '魅力':17 };
                  skillsText = "说服, 运动, 洞悉"
-            }else if (['rogue', 'ranger', 'monk'].includes(charData.class)) {
+            } else if (['rogue', 'ranger', 'monk'].includes(charData.class)) {
                 abilities = { '力量':8, '敏捷':17, '体质':15, '智力':10, '感知':17, '魅力':10 };
                  skillsText = "隐匿, 察觉, 体操"
             }
 
-             // 定义职业生命骰 (Hit Dice)
-	const hdMap = {
-	    'barbarian': 12,
- 	   'fighter': 10, 'paladin': 10, 'ranger': 10,
- 	   'wizard': 6, 'sorcerer': 6,
-  	  'cleric': 8, 'druid': 8, 'monk': 8, 'rogue': 8, 'warlock': 8, 'bard': 8
-	};
+            // 生命值计算
+            const hdMap = {
+                'barbarian': 12,
+                'fighter': 10, 'paladin': 10, 'ranger': 10,
+                'wizard': 6, 'sorcerer': 6,
+                'cleric': 8, 'druid': 8, 'monk': 8, 'rogue': 8, 'warlock': 8, 'bard': 8
+            };
+            const die = hdMap[charData.class] || 8;
+            const cMod = abilityMod(abilities['体质']);
+            const totalHP = die + (Math.floor(die / 2) + 1) * 2 + (cMod * 3);
 
-	const die = hdMap[charData.class] || 8;
-	const cMod = abilityMod(abilities['体质']);
-
-// 2. 计算 3 级血量 (1级满值 + 后两级平均值 + 3倍体质修正)
-	const totalHP = die + (Math.floor(die / 2) + 1) * 2 + (cMod * 3);
             let equipment = '探险者套装，职业起始武器，普通旅行衣物，50gp';
             if (charData.isSquire) {
                 equipment = '【Squire特权】银镀单手矛，长剑，盾牌，骑枪一支，板甲/+1皮甲/+1布甲(自己选一个)，五支标枪，板甲战马一匹720gp';
@@ -664,9 +817,12 @@
 --- 装备 ---
 ${equipment}
 
---- 背景故事摘要 ---
+--- 背景故事 ---
+【人生轨迹】
+${charData.lifePathSummary}
+
+【关键转折】
 ${selectedBg.description}
-(基于你在前几步的选择：${charData.nationality === 'tiamanther' ? '提亚曼瑟本地人' : '外乡人'}，${charData.adultStatus === 'pro' ? '试图成为专业者' : '其他道路'}。)
 
 --- 特殊备注 ---
 ${charData.isSquire ? '【隐藏信息：初始身份为Squire（侍从骑士），享有帝国提供的食宿及720金币年薪。此信息仅DM知晓。】' : '无'}
@@ -816,6 +972,4 @@ ${ally.desc}
         };
     </script>
 </body>
-
 </html>
-
